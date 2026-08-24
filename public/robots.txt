@@ -1,0 +1,3 @@
+# Pitch demo — never indexed (site-pitch default overrides the host template).
+User-agent: *
+Disallow: /

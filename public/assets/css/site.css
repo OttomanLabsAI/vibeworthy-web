@@ -1,0 +1,112 @@
+/* Vibe Worthy — one-page pitch demo. House style, house palette (raspberry
+   on warm paper) chosen over the brand's own blue at the owner's request. */
+:root{
+  --bg:#fbf6ef;         /* warm paper            */
+  --ink:#1d1420;        /* deep plum-black       */
+  --accent:#d6336c;     /* raspberry             */
+  --panel:#ffffff;
+  --dark:#14090f;
+  --gold:#e8a13a;
+  --plum:#4a1d35;
+  --display:"Oswald",Impact,"Arial Narrow",sans-serif;
+  --body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --pitch-accent:var(--accent); /* demo bar picks this up */
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:400 16px/1.6 var(--body)}
+h1,h2,h3{font-family:var(--display);text-transform:uppercase;
+  line-height:1.02;letter-spacing:.01em;margin:0 0 .45em;
+  max-width:none;hyphens:none;overflow-wrap:normal} /* laws 1 + 2 */
+h2{font-size:clamp(1.7rem,5vw,2.6rem)}
+h3{font-size:1.25rem;letter-spacing:.03em}
+p{max-width:65ch;margin:0 0 1em}
+a{color:inherit}
+section{padding:64px 20px}
+.wrap{max-width:1060px;margin:0 auto}
+.band-dark{background:var(--dark);color:#f6ecdf}
+.band-panel{background:var(--panel)}
+.kicker{font:600 12px/1 var(--body);letter-spacing:.18em;
+  text-transform:uppercase;color:var(--accent);margin:0 0 14px}
+.band-dark .kicker{color:var(--gold)}
+
+/* Hero */
+.hero{padding:84px 20px 64px}
+.hero h1{font-weight:700;margin:0 0 22px}
+.hero h1 span{display:block;font-size:clamp(3.2rem,16.5vw,7rem)}
+.hero .stand{font-size:clamp(1.02rem,2.4vw,1.25rem);max-width:34ch;
+  margin-bottom:30px}
+.btn{display:inline-block;background:var(--accent);color:#fff;
+  font:600 15px/1 var(--body);text-transform:uppercase;
+  letter-spacing:.07em;padding:16px 28px;text-decoration:none}
+.btn:hover{background:var(--plum)}
+
+/* Facts strip */
+.facts{padding:0 20px 64px}
+.strip{display:grid;gap:2px;
+  grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr)); /* law 3 */
+  background:rgba(29,20,32,.16)}
+.strip>div{background:var(--panel);padding:18px 16px;font-size:14px;min-width:0}
+.strip b{display:block;font:600 11px/1 var(--body);letter-spacing:.16em;
+  text-transform:uppercase;color:var(--accent);margin-bottom:7px}
+.strip span{font-family:var(--display);font-size:17px;
+  text-transform:uppercase;letter-spacing:.02em;overflow-wrap:anywhere}
+
+/* Service cards (skeleton A panels, collapsed to one spec-sheet set) */
+.grid{display:grid;gap:18px;
+  grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))} /* law 3 */
+.card{background:var(--panel);border:1px solid rgba(29,20,32,.14);
+  padding:24px 22px 20px;position:relative;display:flex;
+  flex-direction:column;gap:8px}
+.band-panel .card{border-color:rgba(29,20,32,.18)}
+.card .tag{position:absolute;top:0;right:0;background:var(--dark);
+  color:#fff;font:700 10px/1 var(--body);letter-spacing:.14em;
+  text-transform:uppercase;padding:6px 9px}
+.card.t2 .tag{background:var(--plum)}
+.card.t3 .tag{background:var(--gold);color:var(--dark)}
+.card h3{margin:2px 0 2px;padding-right:56px}
+.card p{font-size:15px;margin:0 0 10px}
+.card .go{margin-top:auto;font:600 13px/1 var(--body);
+  letter-spacing:.05em;text-transform:uppercase;color:var(--accent);
+  text-decoration:none}
+.card .go:hover{text-decoration:underline}
+
+.grid+.btn{margin-top:30px}
+
+/* Client wall */
+.logo-grid{display:grid;gap:1px;margin-top:26px;
+  grid-template-columns:repeat(auto-fit,minmax(min(180px,100%),1fr))} /* law 3 */
+.logo-grid div{background:var(--panel);display:flex;align-items:center;
+  justify-content:center;text-align:center;padding:28px 14px;min-width:0;
+  font-family:var(--display);font-weight:500;font-size:1.05rem;
+  text-transform:uppercase;letter-spacing:.06em;color:var(--ink);
+  overflow-wrap:anywhere;box-shadow:0 0 0 1px rgba(29,20,32,.14)}
+
+/* About + contact */
+.about p{font-size:clamp(1rem,2.2vw,1.15rem)}
+.contact .mail{display:inline-block;font-family:var(--display);
+  font-size:clamp(1.25rem,4.6vw,2.1rem);text-transform:none;
+  color:var(--gold);text-decoration:none;overflow-wrap:anywhere;
+  margin:4px 0 20px}
+.contact .mail:hover{text-decoration:underline}
+.meta{font-size:14px;opacity:.85}
+.meta a{color:inherit}
+
+footer{background:var(--dark);color:#cdbfc6;font-size:13px;
+  padding:26px 20px;border-top:1px solid rgba(246,236,223,.18)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 26px}
+footer a{color:#f6ecdf}
+
+/* Roster cards (home band + /creatives/) */
+.roster-grid{display:grid;gap:18px;margin-top:8px;
+  grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))} /* law 3 */
+.person{background:var(--panel);border:1px solid rgba(29,20,32,.14);
+  text-decoration:none;color:var(--ink);display:flex;flex-direction:column}
+.person img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
+.person .pbody{padding:18px 18px 20px;display:block}
+.person h3{margin:0 0 4px;font-weight:500}
+.person .role{font:600 12px/1.5 var(--body);letter-spacing:.1em;
+  text-transform:uppercase;color:var(--accent);display:block}
+.person .go{font:600 13px/1 var(--body);letter-spacing:.05em;
+  text-transform:uppercase;color:var(--accent);margin-top:12px;display:block}
+.person:hover .go{text-decoration:underline}

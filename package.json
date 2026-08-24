@@ -1,0 +1,14 @@
+{
+  "name": "vibeworthy-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Three-tab pitch demo for Vibe Worthy — new site, current site, the offer",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "check": "wrangler deploy --dry-run"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}
