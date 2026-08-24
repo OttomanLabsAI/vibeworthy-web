@@ -17,6 +17,7 @@ public/            everything served
   offer/           the offer page
   assets/css       site.css · offer.css
   fonts/           self-hosted Oswald + Inter
+  og.png           social-sharing card, 1200×630, house look
   _headers         security + caching headers
   robots.txt       DISALLOW ALL — pitch demo, never indexed
 wrangler.jsonc     assets-only config, no Worker script
@@ -50,6 +51,9 @@ package.json       wrangler devDependency + dev/deploy scripts
   that credit is unlinked pending the real URL.
 - The offer page's numbers are the flyer's sheet (£500 / £50 / £1,500–£8,000 /
   £0 until transfer). Never restate them differently here and on the flyer.
+- `og.png` is the social-sharing card, referenced from every page's `og:image`
+  by absolute URL on the workers.dev deploy. On transfer to her domain,
+  re-point those URLs; regenerate the card if the site's look changes.
 
 ## Local development
 
@@ -106,3 +110,4 @@ design are their own release, requested deliberately.
 | v1.0 | The Vibe Worthy pitch demo, complete | A new one-page site carrying her eight services and the wall of fifteen clients she has worked with, alongside an offer page with the £500/£50 terms — verified at thirteen widths and ready to connect to Cloudflare. |
 | v1.1 | The demo dressed in midnight and gold | The whole demo now wears the night-sky look from the astrology page — deep midnight blue with old gold, elegant serif headlines and a quiet scatter of stars — from the front page through each creative's booking form to the offer. |
 | v1.2 | Back to raspberry on warm paper | The night-sky experiment is undone at the owner's word: the demo returns to its original look — warm paper, raspberry and bold condensed headlines — exactly as it first shipped, from the front page through the booking forms to the offer. |
+| v1.3 | A proper card when the link is shared | Sharing any page of the demo in a chat or a post now shows a real preview — the Vibe Worthy name in its bold house look on warm paper with the raspberry stripe — instead of a bare link. |

@@ -25,7 +25,7 @@ public/                everything served — no build step
   assets/css/          site.css · offer.css · creatives.css
   assets/js/           booking.js — calendar picker + mailto assembly
   fonts/               self-hosted Oswald + Inter (@fontsource)
-  404.html  favicon.svg  robots.txt  _headers
+  404.html  favicon.svg  og.png  robots.txt  _headers
 wrangler.jsonc         assets-only config, no Worker script
 ```
 
@@ -43,6 +43,13 @@ production. Verify before every push (`npm run check`, then render and inspect
 screenshots). This is a pitch demo: `robots.txt` disallows everything and every
 page carries `noindex,nofollow` — never lift either while it lives on a
 temporary link.
+
+## Social previews
+
+Every page carries Open Graph + Twitter-card meta pointing at `/og.png`
+(1200×630, the house look) by absolute URL on the workers.dev deploy —
+that is what WhatsApp, iMessage, Slack and the rest show when the link is
+shared. On transfer to the client's domain, re-point those `og:image` URLs.
 
 ## External resources
 
