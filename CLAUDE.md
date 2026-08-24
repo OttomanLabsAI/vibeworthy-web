@@ -16,8 +16,8 @@ public/            everything served
   creatives/       talent roster + per-creative booking pages
   offer/           the offer page
   assets/css       site.css · offer.css
-  fonts/           self-hosted Oswald + Inter
-  og.png           social-sharing card, 1200×630, house look
+  fonts/           self-hosted Playfair Display + Inter
+  og.png           social-sharing card, 1200×630, brand look
   _headers         security + caching headers
   robots.txt       DISALLOW ALL — pitch demo, never indexed
 wrangler.jsonc     assets-only config, no Worker script
@@ -33,11 +33,14 @@ package.json       wrangler devDependency + dev/deploy scripts
 - Facts on `/` trace to the run's sourced brief. Do not add claims, prices, or
   copy that Kalpna hasn't supplied or published — the eight services and the
   fifteen client names come from her own site and stay verbatim.
-- The palette is deliberately **not** hers: her site is royal blue with a serif,
-  and the demo shows the house look (raspberry on warm paper, Oswald) by the
-  owner's decision. The night-sky look from the kalpna-astrology demo was tried
-  on 24 Aug 2026 (v1.1) and reverted the same day at the owner's request. Do
-  not "correct" it to her blue, or to the night-sky look, without being asked.
+- The palette now **matches her brand**, at the owner's request (24 Aug 2026):
+  the deep royal blue field (#1c228f), cream type on blue (#fafaea), light
+  ground (#eaebec) and blue type on light (#273ba6) observed on vibeworthy.co
+  in the sourced brief, with a serif display — Playfair Display stands in,
+  because the brief confirms she uses a serif but not which one. Retired
+  earlier looks: the house look (raspberry on warm paper, Oswald — v1.0,
+  restored v1.2) and the night-sky interlude (v1.1). Do not change the look
+  again without being asked.
 - The one-line explanation under each service is our placeholder copy, awaiting
   her approval — it is not her wording.
 - The demo bar's last link goes out to her live site in a new tab. Keep it a
@@ -112,3 +115,4 @@ design are their own release, requested deliberately.
 | v1.2 | Back to raspberry on warm paper | The night-sky experiment is undone at the owner's word: the demo returns to its original look — warm paper, raspberry and bold condensed headlines — exactly as it first shipped, from the front page through the booking forms to the offer. |
 | v1.3 | A proper card when the link is shared | Sharing any page of the demo in a chat or a post now shows a real preview — the Vibe Worthy name in its bold house look on warm paper with the raspberry stripe — instead of a bare link. |
 | v1.4 | A stray file swept back out | A scrap of tooling debris that slipped into the previous release is removed; nothing about the site itself changes. |
+| v1.5 | The demo now wears her own blue | The whole demo now dresses in Vibe Worthy's own branding — the deep royal blue and soft cream of her site, with elegant serif headlines to match — across the front page, the booking pages, the offer and the sharing card. |

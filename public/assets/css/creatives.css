@@ -1,14 +1,14 @@
-/* Vibe Worthy — /creatives/ talent section. House palette, shared by the
-   roster page and every profile page. No rates anywhere, by the client's
-   instruction: booking is an enquiry, scoped to the brief. */
+/* Vibe Worthy — /creatives/ talent section. Brand-matched blues shared with
+   the rest of the site. No rates anywhere, by the client's instruction:
+   booking is an enquiry, scoped to the brief. Selectors unchanged. */
 @import url("/assets/css/site.css");
 
 /* Profile hero */
-.p-hero h1{font-size:clamp(3rem,15vw,6.4rem);margin:0 0 18px}
+.p-hero h1{font-size:clamp(2.6rem,12vw,5.2rem);margin:0 0 18px}
 .p-hero{display:grid;gap:34px;align-items:end;
   grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr))} /* law 3 */
 .p-hero img{width:100%;max-width:430px;aspect-ratio:4/5;object-fit:cover;
-  display:block;border:1px solid rgba(29,20,32,.14)}
+  display:block;border:1px solid rgba(28,34,143,.16)}
 .p-hero .ig{font:600 14px/1 var(--body);color:var(--accent);
   text-decoration:none;overflow-wrap:anywhere}
 .p-hero .ig:hover{text-decoration:underline}
@@ -19,7 +19,7 @@
 .work-grid .card ul{list-style:none;margin:0;padding:0}
 .work-grid .card li{margin:0 0 8px;font-size:15px}
 .work-grid .card a{color:var(--ink);text-decoration:underline;
-  text-decoration-color:rgba(214,51,108,.5);text-underline-offset:3px}
+  text-decoration-color:rgba(28,34,143,.45);text-underline-offset:3px}
 .work-grid .card a:hover{text-decoration-color:var(--accent)}
 .work-grid .card a::after{content:" \2197";color:var(--accent);font-size:.8em}
 
@@ -28,9 +28,9 @@
   grid-template-columns:repeat(auto-fit,minmax(min(180px,100%),1fr))} /* law 3 */
 .artists div{background:var(--panel);display:flex;align-items:center;
   justify-content:center;text-align:center;padding:20px 12px;min-width:0;
-  font-family:var(--display);font-weight:500;font-size:1rem;
-  text-transform:uppercase;letter-spacing:.06em;
-  overflow-wrap:anywhere;box-shadow:0 0 0 1px rgba(29,20,32,.14)}
+  font-family:var(--display);font-weight:600;font-size:.95rem;
+  text-transform:uppercase;letter-spacing:.04em;
+  overflow-wrap:anywhere;box-shadow:0 0 0 1px rgba(28,34,143,.16)}
 
 /* Gallery */
 .shots{display:grid;gap:10px;
@@ -38,40 +38,42 @@
 .shots img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
 
 /* Booking band */
-.book{background:var(--dark);color:#f6ecdf}
+.book{background:var(--dark);color:#fafaea}
 .book .kicker{color:var(--gold)}
 .book form{display:grid;gap:16px;max-width:640px;margin-top:8px}
 .book label{font:600 12px/1 var(--body);letter-spacing:.12em;
   text-transform:uppercase;color:var(--gold);display:block;margin:0 0 7px}
 .book input,.book select,.book textarea{width:100%;box-sizing:border-box;
-  background:#fffdf7;border:1px solid rgba(29,20,32,.3);color:var(--ink);
+  background:#ffffff;border:1px solid rgba(28,34,143,.35);color:var(--ink);
   font:400 15px/1.5 var(--body);padding:12px 12px;border-radius:0}
 .book textarea{min-height:120px;resize:vertical}
 .book .row2{display:grid;gap:16px;
   grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr))} /* law 3 */
-.book .btn{border:0;cursor:pointer;font-family:var(--body)}
-.book .note{font-size:13px;opacity:.8;max-width:52ch}
-.book .privacy{font-size:12.5px;opacity:.65;max-width:52ch}
+.book .btn{border:0;cursor:pointer;font-family:var(--body);
+  background:#fafaea;color:var(--accent)}
+.book .btn:hover{background:#ffffff}
+.book .note{font-size:13px;opacity:.85;max-width:52ch}
+.book .privacy{font-size:12.5px;opacity:.7;max-width:52ch}
 
 /* Calendar */
-.cal{background:#fffdf7;color:var(--ink);border:1px solid rgba(29,20,32,.3);
+.cal{background:#ffffff;color:var(--ink);border:1px solid rgba(28,34,143,.35);
   padding:14px;max-width:360px;user-select:none}
 .cal .cal-head{display:flex;align-items:center;justify-content:space-between;
   margin-bottom:10px}
-.cal .cal-head b{font-family:var(--display);text-transform:uppercase;
-  letter-spacing:.05em;font-size:15px}
-.cal button.nav{appearance:none;background:none;border:1px solid rgba(29,20,32,.3);
+.cal .cal-head b{font-family:var(--display);font-weight:600;text-transform:uppercase;
+  letter-spacing:.04em;font-size:14px}
+.cal button.nav{appearance:none;background:none;border:1px solid rgba(28,34,143,.35);
   width:30px;height:30px;cursor:pointer;font-size:14px;color:var(--ink)}
 .cal button.nav:hover{background:var(--bg)}
 .cal table{width:100%;border-collapse:collapse}
-.cal th{font:600 10px/1 var(--body);letter-spacing:.08em;color:rgba(29,20,32,.55);
+.cal th{font:600 10px/1 var(--body);letter-spacing:.08em;color:rgba(39,59,166,.6);
   text-transform:uppercase;padding:4px 0}
 .cal td{padding:1px}
 .cal td button{appearance:none;border:0;background:none;width:100%;
   aspect-ratio:1;font:500 13px/1 var(--body);color:var(--ink);cursor:pointer}
-.cal td button:hover:not(:disabled){background:rgba(214,51,108,.15)}
-.cal td button:disabled{color:rgba(29,20,32,.25);cursor:default}
-.cal td button.sel{background:var(--accent);color:#fff}
-.cal td button.inrange{background:rgba(214,51,108,.22)}
+.cal td button:hover:not(:disabled){background:rgba(28,34,143,.12)}
+.cal td button:disabled{color:rgba(39,59,166,.3);cursor:default}
+.cal td button.sel{background:var(--accent);color:#fafaea}
+.cal td button.inrange{background:rgba(28,34,143,.18)}
 .cal-pick{font:600 14px/1.5 var(--body);margin:10px 0 0;color:var(--gold)}
-.cal-wrap .hint{font-size:12.5px;opacity:.75;margin:8px 0 0;color:#f6ecdf}
+.cal-wrap .hint{font-size:12.5px;opacity:.8;margin:8px 0 0;color:#fafaea}

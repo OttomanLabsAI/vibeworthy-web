@@ -24,7 +24,7 @@ public/                everything served — no build step
   offer/index.html     the offer
   assets/css/          site.css · offer.css · creatives.css
   assets/js/           booking.js — calendar picker + mailto assembly
-  fonts/               self-hosted Oswald + Inter (@fontsource)
+  fonts/               self-hosted Playfair Display + Inter (@fontsource)
   404.html  favicon.svg  og.png  robots.txt  _headers
 wrangler.jsonc         assets-only config, no Worker script
 ```
@@ -47,7 +47,7 @@ temporary link.
 ## Social previews
 
 Every page carries Open Graph + Twitter-card meta pointing at `/og.png`
-(1200×630, the house look) by absolute URL on the workers.dev deploy —
+(1200×630, the brand look) by absolute URL on the workers.dev deploy —
 that is what WhatsApp, iMessage, Slack and the rest show when the link is
 shared. On transfer to the client's domain, re-point those `og:image` URLs.
 
