@@ -16,7 +16,7 @@ public/            everything served
   creatives/       talent roster + per-creative booking pages
   offer/           the offer page
   assets/css       site.css · offer.css
-  fonts/           self-hosted Playfair Display + Inter
+  fonts/           self-hosted Lora + Poppins
   og.png           social-sharing card, 1200×630, brand look
   _headers         security + caching headers
   robots.txt       DISALLOW ALL — pitch demo, never indexed
@@ -33,14 +33,17 @@ package.json       wrangler devDependency + dev/deploy scripts
 - Facts on `/` trace to the run's sourced brief. Do not add claims, prices, or
   copy that Kalpna hasn't supplied or published — the eight services and the
   fifteen client names come from her own site and stay verbatim.
-- The palette now **matches her brand**, at the owner's request (24 Aug 2026):
+- The look now **matches her brand**, at the owner's request (24 Aug 2026):
   the deep royal blue field (#1c228f), cream type on blue (#fafaea), light
-  ground (#eaebec) and blue type on light (#273ba6) observed on vibeworthy.co
-  in the sourced brief, with a serif display — Playfair Display stands in,
-  because the brief confirms she uses a serif but not which one. Retired
-  earlier looks: the house look (raspberry on warm paper, Oswald — v1.0,
-  restored v1.2) and the night-sky interlude (v1.1). Do not change the look
-  again without being asked.
+  ground (#eaebec) and blue type on light (#273ba6) from the sourced brief,
+  refined against two further owner-supplied screenshots of the live site
+  (hero + Values, 24 Aug): sentence-case serif headings, italic serif feature
+  titles, an italic serif wordmark ending in a star, rounded hairline cards
+  on the light ground, rounded geometric sans body. Her site runs on Readymag
+  and its exact faces are unreadable from screenshots, so Lora and Poppins
+  stand in — swap them if the real names surface. Retired earlier looks: the
+  house look (raspberry on warm paper, Oswald — v1.0, restored v1.2) and the
+  night-sky interlude (v1.1). Do not change the look again without being asked.
 - The one-line explanation under each service is our placeholder copy, awaiting
   her approval — it is not her wording.
 - The demo bar's last link goes out to her live site in a new tab. Keep it a
@@ -116,3 +119,4 @@ design are their own release, requested deliberately.
 | v1.3 | A proper card when the link is shared | Sharing any page of the demo in a chat or a post now shows a real preview — the Vibe Worthy name in its bold house look on warm paper with the raspberry stripe — instead of a bare link. |
 | v1.4 | A stray file swept back out | A scrap of tooling debris that slipped into the previous release is removed; nothing about the site itself changes. |
 | v1.5 | The demo now wears her own blue | The whole demo now dresses in Vibe Worthy's own branding — the deep royal blue and soft cream of her site, with elegant serif headlines to match — across the front page, the booking pages, the offer and the sharing card. |
+| v1.6 | Matched against the real thing | With her live site finally in view, the demo now carries its true character — the soft serif headlines, the italic titles, the airy rounded outlines on pale grey, and a wordmark that ends in her star — across every page and the sharing card. |
