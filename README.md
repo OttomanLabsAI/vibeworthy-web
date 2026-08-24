@@ -24,7 +24,7 @@ public/                everything served — no build step
   offer/index.html     the offer
   assets/css/          site.css · offer.css · creatives.css
   assets/js/           booking.js — calendar picker + mailto assembly
-  fonts/               self-hosted Oswald + Inter (@fontsource)
+  fonts/               self-hosted Cormorant Garamond + Jost (@fontsource)
   404.html  favicon.svg  robots.txt  _headers
 wrangler.jsonc         assets-only config, no Worker script
 ```

@@ -16,7 +16,7 @@ public/            everything served
   creatives/       talent roster + per-creative booking pages
   offer/           the offer page
   assets/css       site.css · offer.css
-  fonts/           self-hosted Oswald + Inter
+  fonts/           self-hosted Cormorant Garamond + Jost
   _headers         security + caching headers
   robots.txt       DISALLOW ALL — pitch demo, never indexed
 wrangler.jsonc     assets-only config, no Worker script
@@ -32,9 +32,12 @@ package.json       wrangler devDependency + dev/deploy scripts
 - Facts on `/` trace to the run's sourced brief. Do not add claims, prices, or
   copy that Kalpna hasn't supplied or published — the eight services and the
   fifteen client names come from her own site and stay verbatim.
-- The palette is deliberately **not** hers: her site is royal blue with a serif,
-  and the demo shows the house look (raspberry on warm paper, Oswald) by the
-  owner's decision. Do not "correct" it back to blue without being asked.
+- The palette is deliberately **not** hers: her site is royal blue with a serif.
+  Since 24 Aug 2026 the demo wears the night-sky look mirrored from the
+  kalpna-astrology demo (deep indigo, old gold, Cormorant Garamond over Jost)
+  at the owner's request; before that it wore the house look (raspberry on warm
+  paper, Oswald). Do not "correct" it to her blue, or back to the house look,
+  without being asked.
 - The one-line explanation under each service is our placeholder copy, awaiting
   her approval — it is not her wording.
 - The demo bar's last link goes out to her live site in a new tab. Keep it a
@@ -102,3 +105,4 @@ design are their own release, requested deliberately.
 | Version | Title | Description |
 | --- | --- | --- |
 | v1.0 | The Vibe Worthy pitch demo, complete | A new one-page site carrying her eight services and the wall of fifteen clients she has worked with, alongside an offer page with the £500/£50 terms — verified at thirteen widths and ready to connect to Cloudflare. |
+| v1.1 | The demo dressed in midnight and gold | The whole demo now wears the night-sky look from the astrology page — deep midnight blue with old gold, elegant serif headlines and a quiet scatter of stars — from the front page through each creative's booking form to the offer. |
