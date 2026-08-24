@@ -16,7 +16,7 @@ public/            everything served
   creatives/       talent roster + per-creative booking pages
   offer/           the offer page
   assets/css       site.css · offer.css
-  fonts/           self-hosted Cormorant Garamond + Jost
+  fonts/           self-hosted Oswald + Inter
   _headers         security + caching headers
   robots.txt       DISALLOW ALL — pitch demo, never indexed
 wrangler.jsonc     assets-only config, no Worker script
@@ -32,12 +32,11 @@ package.json       wrangler devDependency + dev/deploy scripts
 - Facts on `/` trace to the run's sourced brief. Do not add claims, prices, or
   copy that Kalpna hasn't supplied or published — the eight services and the
   fifteen client names come from her own site and stay verbatim.
-- The palette is deliberately **not** hers: her site is royal blue with a serif.
-  Since 24 Aug 2026 the demo wears the night-sky look mirrored from the
-  kalpna-astrology demo (deep indigo, old gold, Cormorant Garamond over Jost)
-  at the owner's request; before that it wore the house look (raspberry on warm
-  paper, Oswald). Do not "correct" it to her blue, or back to the house look,
-  without being asked.
+- The palette is deliberately **not** hers: her site is royal blue with a serif,
+  and the demo shows the house look (raspberry on warm paper, Oswald) by the
+  owner's decision. The night-sky look from the kalpna-astrology demo was tried
+  on 24 Aug 2026 (v1.1) and reverted the same day at the owner's request. Do
+  not "correct" it to her blue, or to the night-sky look, without being asked.
 - The one-line explanation under each service is our placeholder copy, awaiting
   her approval — it is not her wording.
 - The demo bar's last link goes out to her live site in a new tab. Keep it a
@@ -106,3 +105,4 @@ design are their own release, requested deliberately.
 | --- | --- | --- |
 | v1.0 | The Vibe Worthy pitch demo, complete | A new one-page site carrying her eight services and the wall of fifteen clients she has worked with, alongside an offer page with the £500/£50 terms — verified at thirteen widths and ready to connect to Cloudflare. |
 | v1.1 | The demo dressed in midnight and gold | The whole demo now wears the night-sky look from the astrology page — deep midnight blue with old gold, elegant serif headlines and a quiet scatter of stars — from the front page through each creative's booking form to the offer. |
+| v1.2 | Back to raspberry on warm paper | The night-sky experiment is undone at the owner's word: the demo returns to its original look — warm paper, raspberry and bold condensed headlines — exactly as it first shipped, from the front page through the booking forms to the offer. |
