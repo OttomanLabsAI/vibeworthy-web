@@ -672,6 +672,22 @@
   </div>
 </section>
 <style id="static-canvas-css">
+  /* Her Adobe Fonts kit (FreightTextCmp Pro = qhhw, Poppins = thsk, Sweet
+     Sans Pro = tgzb, Neue Haas Grotesk = wtqc) is licensed to her domain and
+     refuses this deploy, leaving the captured styles' bare family names to
+     fall back to the browser's default serif.  These later same-name faces
+     take precedence and serve the site's own files instead — Lora and
+     Poppins, the pitch's stand-ins for her faces.  Remove this block on
+     transfer to her domain so the real kit takes over. */
+  @font-face{font-family:qhhw;font-style:normal;font-weight:400;src:url(/fonts/lora-latin-500-normal.woff2) format("woff2");font-display:swap}
+  @font-face{font-family:qhhw;font-style:normal;font-weight:500;src:url(/fonts/lora-latin-500-normal.woff2) format("woff2");font-display:swap}
+  @font-face{font-family:qhhw;font-style:normal;font-weight:600;src:url(/fonts/lora-latin-600-normal.woff2) format("woff2");font-display:swap}
+  @font-face{font-family:qhhw;font-style:italic;font-weight:500;src:url(/fonts/lora-latin-600-italic.woff2) format("woff2");font-display:swap}
+  @font-face{font-family:qhhw;font-style:italic;font-weight:700;src:url(/fonts/lora-latin-600-italic.woff2) format("woff2");font-display:swap}
+  @font-face{font-family:thsk;font-style:normal;font-weight:400;src:url(/fonts/poppins-latin-400-normal.woff2) format("woff2");font-display:swap}
+  @font-face{font-family:thsk;font-style:italic;font-weight:700;src:url(/fonts/poppins-latin-600-normal.woff2) format("woff2");font-display:swap}
+  @font-face{font-family:tgzb;font-style:normal;font-weight:600;src:url(/fonts/poppins-latin-600-normal.woff2) format("woff2");font-display:swap}
+  @font-face{font-family:wtqc;font-style:normal;font-weight:400;src:url(/fonts/poppins-latin-400-normal.woff2) format("woff2");font-display:swap}
   html,body{min-width:0 !important}
   /* viewer.css freezes document scroll (html,body overflow:hidden) for the
      runtime's own scroll model; the static copy scrolls natively instead */
@@ -712,6 +728,18 @@
       tw[k].style.whiteSpace="nowrap";tw[k].style.width="auto";
       welcome=tw[k];
     }
+  }
+  /* the stand-in faces run wider than her compressed originals; hold the
+     one-line widgets to the lines they were drawn for (centred boxes
+     overflow evenly, so alignment holds) */
+  var ONELINE={"Culture Marketing Consultancy":1,"Artist Marketing Consultancy":1,
+    "Social Media Strategy":1,"Social Media Management":1,"Content Creation":1,
+    "Design":1,"Animation":1,"Vibes":1,
+    "The Vibes":1,"The People":1,"The Creativity":1};
+  for(k=0;k<tw.length;k++){
+    var wtxt=tw[k].textContent.replace(/\s+/g," ").trim();
+    if(ONELINE[wtxt]) tw[k].style.whiteSpace="nowrap";
+    if(wtxt==="Consultation") tw[k].style.letterSpacing="-0.4px";
   }
   /* undo frozen mid pop-in scales on load tracks (offset already settled) */
   var acs=document.querySelectorAll(".animation-container");

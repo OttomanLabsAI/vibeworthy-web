@@ -53,9 +53,15 @@ package.json       wrangler devDependency + dev/deploy scripts
   the phone rendition alike — sits `#people`, our pitch-added roster of her
   three creatives (owner request, 25 Aug 2026) linking to their
   `/creatives/<name>/` booking pages; `/creatives/` itself forwards to
-  `/#people`. Her fonts (FreightTextCmp Pro, Poppins,
-  Sweet Sans Pro via her Adobe Fonts kit URLs; Inter + Pinyon Script via
-  gstatic) stay remote — they are licensed to her and cannot be vendored.
+  `/#people`. Her kit faces (FreightTextCmp Pro = `qhhw`, Poppins = `thsk`,
+  Sweet Sans Pro = `tgzb`, Neue Haas = `wtqc`) are licensed to her domain:
+  the captured Typekit @font-face rules stay in the head but Adobe refuses
+  the demo deploy, so `static-canvas-css` declares same-name faces serving
+  the self-hosted Lora/Poppins as stand-ins (plus a few one-line width
+  patches in `static-canvas-js` where the stand-ins run wider than her
+  compressed originals). On transfer to her domain, remove the alias faces
+  so the real kit takes over. Inter + Pinyon Script still load remotely via
+  gstatic.
 - The pitch pages (`/creatives/`, `/offer/`, 404) keep the brand-matched look
   of v1.6 (her blues and cream, Lora + Poppins standing in for her faces).
   Do not change that look without being asked. On those pages the one-line
@@ -147,3 +153,4 @@ design are their own release, requested deliberately.
 | v1.12 | The ticker reads clean again | The running ticker's little star separators had drifted onto the words themselves, striking through the text; they are retired, and the line now scrolls past unobstructed on both bands. |
 | v1.13 | A right size for every screen | On big monitors the page no longer inflates — it sits centred at its true size with the type held steady. And phones now get a page built for them: the same words, logos and colours restacked into one readable column instead of a shrunken desktop. |
 | v1.14 | The cards glide and the people move in | The process cards now slide across as you scroll, the way her original moves. Her three creatives now live at the foot of the front page itself — bookable in a tap — and the offer page carries a plain list of what the demo already does that the current site doesn't. |
+| v1.15 | The type finds its voice again | Her font service refuses to dress the demo's address, so every headline had been falling back to a plain default face. The whole page — headlines, tickers, cards and all — now wears the site's own elegant serif and clean sans, with each line held to the width it was drawn for. |
