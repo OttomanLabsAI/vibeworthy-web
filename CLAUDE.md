@@ -7,8 +7,8 @@ Standing policy for this repository. Read it before making any change here.
 A Cloudflare Workers static-assets site — the **pitch deploy for Vibe
 Worthy**. Since v1.7 the front page `/` is **her original site**: the
 owner-supplied "Webpage, Complete" capture of vibeworthy.co, vendored whole.
-The pitch's `/creatives/` and `/offer/` pages sit one tab away on the demo
-bar. Everything served lives in `public/` and there is no build step - the
+The pitch adds her creatives as `#people` at the foot of `/` (with booking
+pages under `/creatives/<name>/`) and the `/offer/` page one tab away. Everything served lives in `public/` and there is no build step - the
 files in that directory are the site. The repo is connected to Cloudflare
 Workers Builds, so **every push to `main` deploys to production**.
 
@@ -17,7 +17,8 @@ public/            everything served
   index.html       her original page (vendored capture — see rules below)
   assets/rm/       its assets: all images (client logos, her photo, the
                    wordmark), viewer.css, google-fonts.css
-  creatives/       talent roster + per-creative booking pages
+  creatives/       per-creative booking pages (the roster itself lives on /
+                   as #people; /creatives/ just forwards there)
   offer/           the offer page
   assets/css       site.css · offer.css · creatives.css (pitch pages)
   fonts/           self-hosted Lora + Poppins (pitch pages)
@@ -43,12 +44,16 @@ package.json       wrangler devDependency + dev/deploy scripts
   width 1375, scaled to fill narrower desktop viewports and capped at its
   natural size — centred, type constant — on wider ones; the hero's
   logo-to-masthead scrub, the pinned masthead with working nav pills and the
-  marquees rebuilt from the captured animation tracks). Do not edit her DOM,
-  copy or images. Under 768px the canvas gives way to `#phone-render` — our
+  marquees and the process cards' scroll-driven slide rebuilt from the
+  captured animation tracks). Do not edit her DOM, copy or images. Under 768px the canvas gives way to `#phone-render` — our
   hand-stacked phone rendition of the same page: her copy, images and
   colours verbatim, her font stacks with fallbacks. Her live phone layout is
   separate and not in the capture; swap the rendition for the real thing if
-  her Readymag export ever arrives. Her fonts (FreightTextCmp Pro, Poppins,
+  her Readymag export ever arrives. Below her page — after the canvas and
+  the phone rendition alike — sits `#people`, our pitch-added roster of her
+  three creatives (owner request, 25 Aug 2026) linking to their
+  `/creatives/<name>/` booking pages; `/creatives/` itself forwards to
+  `/#people`. Her fonts (FreightTextCmp Pro, Poppins,
   Sweet Sans Pro via her Adobe Fonts kit URLs; Inter + Pinyon Script via
   gstatic) stay remote — they are licensed to her and cannot be vendored.
 - The pitch pages (`/creatives/`, `/offer/`, 404) keep the brand-matched look
@@ -56,7 +61,7 @@ package.json       wrangler devDependency + dev/deploy scripts
   Do not change that look without being asked. On those pages the one-line
   explanation under each service card is our placeholder copy — not her
   wording.
-- The demo bar (tabs: The site · Creatives · The offer · Current site ↗) is
+- The demo bar (tabs: The site · The people · The offer · Current site ↗) is
   chrome on every page except the 404; its last link goes out to her live
   site in a new tab. Keep it a plain anchor: nothing is fetched or framed
   from vibeworthy.co by any page.
@@ -69,6 +74,8 @@ package.json       wrangler devDependency + dev/deploy scripts
   that credit is unlinked pending the real URL.
 - The offer page's numbers are the flyer's sheet (£500 / £50 / £1,500–£8,000 /
   £0 until transfer). Never restate them differently here and on the flyer.
+  Its "Already in the demo" list claims only what the demo verifiably does;
+  keep it true when the front page changes.
 - `og.png` is the social-sharing card, referenced from every page's `og:image`
   by absolute URL on the workers.dev deploy. On transfer to her domain,
   re-point those URLs; regenerate the card if the site's look changes.
@@ -139,3 +146,4 @@ design are their own release, requested deliberately.
 | v1.11 | The front page moves like the real thing | The hero opens as it should — Welcome to, the big wordmark, the definitions — then the logo glides up and shrinks into a pinned masthead as you scroll, the marquees run again, and the masthead's About, Services and Contact buttons carry you to their sections. |
 | v1.12 | The ticker reads clean again | The running ticker's little star separators had drifted onto the words themselves, striking through the text; they are retired, and the line now scrolls past unobstructed on both bands. |
 | v1.13 | A right size for every screen | On big monitors the page no longer inflates — it sits centred at its true size with the type held steady. And phones now get a page built for them: the same words, logos and colours restacked into one readable column instead of a shrunken desktop. |
+| v1.14 | The cards glide and the people move in | The process cards now slide across as you scroll, the way her original moves. Her three creatives now live at the foot of the front page itself — bookable in a tap — and the offer page carries a plain list of what the demo already does that the current site doesn't. |

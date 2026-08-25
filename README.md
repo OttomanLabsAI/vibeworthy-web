@@ -8,7 +8,7 @@ on the demo bar. Packaged as a Cloudflare Workers static-assets site.
 | Route | Page |
 | --- | --- |
 | `/` | Her original site — the owner-supplied capture of vibeworthy.co, every asset vendored |
-| `/creatives/` | The talent roster — the creatives Vibe Worthy works with |
+| `/#people` | The talent roster, at the foot of the front page (`/creatives/` forwards here) |
 | `/creatives/<name>/` | Per-creative pitch page + booking enquiry (Naomi, Nee, Poonam) |
 | `/offer/` | The offer — tale of the tape, £500 / £50, terms |
 
@@ -19,7 +19,7 @@ public/                everything served — no build step
   index.html           her original page (see "The original copy" below)
   assets/rm/           its vendored assets — all images (client logos, her
                        photo, the wordmark), viewer.css, google-fonts.css
-  creatives/           roster + per-creative pages and their photos
+  creatives/           per-creative booking pages and their photos
   offer/index.html     the offer
   assets/css/          site.css · offer.css · creatives.css (pitch pages)
   assets/js/           booking.js — calendar picker + mailto assembly
