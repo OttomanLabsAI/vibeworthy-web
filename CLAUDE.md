@@ -39,14 +39,18 @@ package.json       wrangler devDependency + dev/deploy scripts
   with asset paths localised to `assets/rm/`, our og/description meta and the
   demo bar injected, the Readymag runtime and its `__RM_PROPS__` blob removed,
   and a small `static-canvas-*` style/script layer at the end of the file
-  doing what the runtime did for layout (canvas height 4372 × width 1375,
-  scaled to the viewport; mid-animation widgets revealed). Do not edit her
-  DOM, copy or images. The page is frozen in the captured state — no
-  animations, the logo resting in its masthead state — and phones see the
-  desktop design scaled (her live phone layout is separate and not in the
-  capture). Her fonts (FreightTextCmp Pro, Poppins, Sweet Sans Pro via her
-  Adobe Fonts kit URLs; Inter + Pinyon Script via gstatic) stay remote — they
-  are licensed to her and cannot be vendored.
+  doing what the runtime did for layout and motion (canvas height 4372 ×
+  width 1375, scaled to fill narrower desktop viewports and capped at its
+  natural size — centred, type constant — on wider ones; the hero's
+  logo-to-masthead scrub, the pinned masthead with working nav pills and the
+  marquees rebuilt from the captured animation tracks). Do not edit her DOM,
+  copy or images. Under 768px the canvas gives way to `#phone-render` — our
+  hand-stacked phone rendition of the same page: her copy, images and
+  colours verbatim, her font stacks with fallbacks. Her live phone layout is
+  separate and not in the capture; swap the rendition for the real thing if
+  her Readymag export ever arrives. Her fonts (FreightTextCmp Pro, Poppins,
+  Sweet Sans Pro via her Adobe Fonts kit URLs; Inter + Pinyon Script via
+  gstatic) stay remote — they are licensed to her and cannot be vendored.
 - The pitch pages (`/creatives/`, `/offer/`, 404) keep the brand-matched look
   of v1.6 (her blues and cream, Lora + Poppins standing in for her faces).
   Do not change that look without being asked. On those pages the one-line
@@ -134,3 +138,4 @@ design are their own release, requested deliberately.
 | v1.10 | The pictures come back on every phone | The captured images had been saved under the wrong file type, which stricter browsers — iPhones especially — refuse to show, leaving the page full of empty frames. Every image is now served as what it truly is, and the client wall carries the crisper logo files she supplied. |
 | v1.11 | The front page moves like the real thing | The hero opens as it should — Welcome to, the big wordmark, the definitions — then the logo glides up and shrinks into a pinned masthead as you scroll, the marquees run again, and the masthead's About, Services and Contact buttons carry you to their sections. |
 | v1.12 | The ticker reads clean again | The running ticker's little star separators had drifted onto the words themselves, striking through the text; they are retired, and the line now scrolls past unobstructed on both bands. |
+| v1.13 | A right size for every screen | On big monitors the page no longer inflates — it sits centred at its true size with the type held steady. And phones now get a page built for them: the same words, logos and colours restacked into one readable column instead of a shrunken desktop. |

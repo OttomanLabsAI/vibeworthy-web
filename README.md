@@ -33,13 +33,17 @@ wrangler.jsonc         assets-only config, no Worker script
 `/` is a static rendition of the live Readymag page, built from the owner's
 "Webpage, Complete" save. Every image is served locally from `assets/rm/`.
 The Readymag runtime was removed — it cannot run against a saved DOM without
-their servers — so the page is frozen in the captured state: no entrance or
-scroll animations, and the shrink-into-masthead logo rests in its masthead
-state. A small inline layer (the `static-canvas-*` style/script at the end of
-`index.html`) does what the runtime did for layout: gives the canvas its
-height and scales it to the viewport. Phones therefore see the desktop design
-scaled to fit (her live site serves a separate phone layout that a desktop
-save cannot contain). The live original stays one click away on the demo bar.
+their servers. A small inline layer (the `static-canvas-*` style/script at
+the end of `index.html`) does what the runtime did for layout and motion:
+gives the canvas its height, scales it to fill narrower desktop viewports,
+caps it at its natural 1375px — centred, type constant — on wider ones, and
+rebuilds the scroll choreography (the logo's shrink into a pinned masthead,
+the fading welcome line, the running marquees, the nav pills) from the
+captured animation tracks. Under 768px the canvas gives way to
+`#phone-render`, a hand-stacked phone rendition of the same content — her
+copy, images and colours verbatim (her live site serves its own phone layout
+that a desktop save cannot contain). The live original stays one click away
+on the demo bar.
 
 ## Local development
 
