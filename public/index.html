@@ -506,6 +506,19 @@
   els=document.querySelectorAll("[style*='animation-play-state']");
   for(i=0;i<els.length;i++) els[i].style.animationPlayState="running";
 
+  /* the marquee star separators are independent sprites tuned to her exact
+     typeface metrics; out of phase they land on the words, so retire them */
+  var BANDS=["animation_10_1","animation_12_1","animation_13_1","animation_14_1"];
+  for(i=0;i<BANDS.length;i++){
+    var band=document.querySelector('.animation-container[style*="'+BANDS[i]+'"]');
+    if(!band)continue;
+    var bimgs=band.querySelectorAll("img");
+    for(var bi=0;bi<bimgs.length;bi++){
+      var bsrc=(bimgs[bi].getAttribute("src")||"")+(bimgs[bi].getAttribute("srcset")||"");
+      if(bsrc.indexOf("3306f450")>-1) bimgs[bi].style.visibility="hidden";
+    }
+  }
+
   /* canvas scaling — what the removed runtime did for layout */
   /* Readymag's fixed layer (masthead bar) cannot pin from inside a scaled
      wrapper, so it pins from the body like the demo bar, scaled in step */
