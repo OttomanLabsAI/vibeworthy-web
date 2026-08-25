@@ -4,20 +4,24 @@ Standing policy for this repository. Read it before making any change here.
 
 ## What this repo is
 
-A Cloudflare Workers static-assets site — the **site-pitch demo for Vibe
-Worthy** (new site `/`, offer `/offer/`).
-Everything served lives in `public/` and there is no build step - the files in
-that directory are the site. The repo is connected to Cloudflare Workers
-Builds, so **every push to `main` deploys to production**.
+A Cloudflare Workers static-assets site — the **pitch deploy for Vibe
+Worthy**. Since v1.7 the front page `/` is **her original site**: the
+owner-supplied "Webpage, Complete" capture of vibeworthy.co, vendored whole.
+The pitch's `/creatives/` and `/offer/` pages sit one tab away on the demo
+bar. Everything served lives in `public/` and there is no build step - the
+files in that directory are the site. The repo is connected to Cloudflare
+Workers Builds, so **every push to `main` deploys to production**.
 
 ```
 public/            everything served
-  index.html       the new site
+  index.html       her original page (vendored capture — see rules below)
+  assets/rm/       its assets: all images (client logos, her photo, the
+                   wordmark), viewer.css, google-fonts.css
   creatives/       talent roster + per-creative booking pages
   offer/           the offer page
-  assets/css       site.css · offer.css
-  fonts/           self-hosted Lora + Poppins
-  og.png           social-sharing card, 1200×630, brand look
+  assets/css       site.css · offer.css · creatives.css (pitch pages)
+  fonts/           self-hosted Lora + Poppins (pitch pages)
+  og.png           social-sharing card, 1200×630, her wordmark on her cream
   _headers         security + caching headers
   robots.txt       DISALLOW ALL — pitch demo, never indexed
 wrangler.jsonc     assets-only config, no Worker script
@@ -30,24 +34,28 @@ package.json       wrangler devDependency + dev/deploy scripts
   `noindex,nofollow`. Keep both until the site transfers to the client's own
   domain; on transfer, the demo bar, the `/offer/` route and the noindex
   machinery all come out.
-- Facts on `/` trace to the run's sourced brief. Do not add claims, prices, or
-  copy that Kalpna hasn't supplied or published — the eight services and the
-  fifteen client names come from her own site and stay verbatim.
-- The look now **matches her brand**, at the owner's request (24 Aug 2026):
-  the deep royal blue field (#1c228f), cream type on blue (#fafaea), light
-  ground (#eaebec) and blue type on light (#273ba6) from the sourced brief,
-  refined against two further owner-supplied screenshots of the live site
-  (hero + Values, 24 Aug): sentence-case serif headings, italic serif feature
-  titles, an italic serif wordmark ending in a star, rounded hairline cards
-  on the light ground, rounded geometric sans body. Her site runs on Readymag
-  and its exact faces are unreadable from screenshots, so Lora and Poppins
-  stand in — swap them if the real names surface. Retired earlier looks: the
-  house look (raspberry on warm paper, Oswald — v1.0, restored v1.2) and the
-  night-sky interlude (v1.1). Do not change the look again without being asked.
-- The one-line explanation under each service is our placeholder copy, awaiting
-  her approval — it is not her wording.
-- The demo bar's last link goes out to her live site in a new tab. Keep it a
-  plain anchor: nothing may be fetched or framed from vibeworthy.co.
+- `/` is **her page, verbatim** (v1.7, "just take the original" — the owner's
+  instruction, 25 Aug 2026): a static rendition of the Readymag DOM she saved,
+  with asset paths localised to `assets/rm/`, our og/description meta and the
+  demo bar injected, the Readymag runtime and its `__RM_PROPS__` blob removed,
+  and a small `static-canvas-*` style/script layer at the end of the file
+  doing what the runtime did for layout (canvas height 4372 × width 1375,
+  scaled to the viewport; mid-animation widgets revealed). Do not edit her
+  DOM, copy or images. The page is frozen in the captured state — no
+  animations, the logo resting in its masthead state — and phones see the
+  desktop design scaled (her live phone layout is separate and not in the
+  capture). Her fonts (FreightTextCmp Pro, Poppins, Sweet Sans Pro via her
+  Adobe Fonts kit URLs; Inter + Pinyon Script via gstatic) stay remote — they
+  are licensed to her and cannot be vendored.
+- The pitch pages (`/creatives/`, `/offer/`, 404) keep the brand-matched look
+  of v1.6 (her blues and cream, Lora + Poppins standing in for her faces).
+  Do not change that look without being asked. On those pages the one-line
+  explanation under each service card is our placeholder copy — not her
+  wording.
+- The demo bar (tabs: The site · Creatives · The offer · Current site ↗) is
+  chrome on every page except the 404; its last link goes out to her live
+  site in a new tab. Keep it a plain anchor: nothing is fetched or framed
+  from vibeworthy.co by any page.
 - **No rates anywhere on /creatives/** — the client's explicit instruction.
   Booking is an enquiry scoped to the brief; never add prices, day rates or
   budget menus to those pages.
@@ -120,3 +128,4 @@ design are their own release, requested deliberately.
 | v1.4 | A stray file swept back out | A scrap of tooling debris that slipped into the previous release is removed; nothing about the site itself changes. |
 | v1.5 | The demo now wears her own blue | The whole demo now dresses in Vibe Worthy's own branding — the deep royal blue and soft cream of her site, with elegant serif headlines to match — across the front page, the booking pages, the offer and the sharing card. |
 | v1.6 | Matched against the real thing | With her live site finally in view, the demo now carries its true character — the soft serif headlines, the italic titles, the airy rounded outlines on pale grey, and a wordmark that ends in her star — across every page and the sharing card. |
+| v1.7 | Her own site takes the front page | The front page is now Kalpna's actual site, captured whole and hosted with us — her wordmark, her photo and all fifteen client logos served from our own files — with the creatives and the offer one tab away, and the sharing card carrying her real logo. |

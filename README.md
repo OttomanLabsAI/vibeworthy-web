@@ -1,33 +1,45 @@
 # vibeworthy-web
 
-Three-tab pitch demo for **Vibe Worthy** (vibeworthy.co) — Kalpna Tandon's
-culture marketing agency, London. Built by the site-pitch workflow, packaged as
-a Cloudflare Workers static-assets site.
+Pitch deploy for **Vibe Worthy** (vibeworthy.co) — Kalpna Tandon's culture
+marketing agency, London. The front page is her own site, captured whole and
+served from this repo; the pitch's creatives and offer pages sit one tab away
+on the demo bar. Packaged as a Cloudflare Workers static-assets site.
 
 | Route | Page |
 | --- | --- |
-| `/` | The new site — one page, built strictly from the sourced brief |
+| `/` | Her original site — the owner-supplied capture of vibeworthy.co, every asset vendored |
 | `/creatives/` | The talent roster — the creatives Vibe Worthy works with |
 | `/creatives/<name>/` | Per-creative pitch page + booking enquiry (Naomi, Nee, Poonam) |
 | `/offer/` | The offer — tale of the tape, £500 / £50, terms |
-
-There is no `/original/` route. In its place the demo bar carries an outbound
-link that opens the prospect's live site, `https://vibeworthy.co/`, in a new
-tab — so the comparison is still one click away without hosting a copy.
 
 ## Structure
 
 ```
 public/                everything served — no build step
-  index.html           the new site
+  index.html           her original page (see "The original copy" below)
+  assets/rm/           its vendored assets — all images (client logos, her
+                       photo, the wordmark), viewer.css, google-fonts.css
   creatives/           roster + per-creative pages and their photos
   offer/index.html     the offer
-  assets/css/          site.css · offer.css · creatives.css
+  assets/css/          site.css · offer.css · creatives.css (pitch pages)
   assets/js/           booking.js — calendar picker + mailto assembly
-  fonts/               self-hosted Lora + Poppins (@fontsource)
+  fonts/               self-hosted Lora + Poppins (pitch pages)
   404.html  favicon.svg  og.png  robots.txt  _headers
 wrangler.jsonc         assets-only config, no Worker script
 ```
+
+## The original copy
+
+`/` is a static rendition of the live Readymag page, built from the owner's
+"Webpage, Complete" save. Every image is served locally from `assets/rm/`.
+The Readymag runtime was removed — it cannot run against a saved DOM without
+their servers — so the page is frozen in the captured state: no entrance or
+scroll animations, and the shrink-into-masthead logo rests in its masthead
+state. A small inline layer (the `static-canvas-*` style/script at the end of
+`index.html`) does what the runtime did for layout: gives the canvas its
+height and scales it to the viewport. Phones therefore see the desktop design
+scaled to fit (her live site serves a separate phone layout that a desktop
+save cannot contain). The live original stays one click away on the demo bar.
 
 ## Local development
 
@@ -47,18 +59,22 @@ temporary link.
 ## Social previews
 
 Every page carries Open Graph + Twitter-card meta pointing at `/og.png`
-(1200×630, the brand look) by absolute URL on the workers.dev deploy —
-that is what WhatsApp, iMessage, Slack and the rest show when the link is
-shared. On transfer to the client's domain, re-point those `og:image` URLs.
+(1200×630 — her real wordmark on her cream) by absolute URL on the workers.dev
+deploy. On transfer to the client's domain, re-point those `og:image` URLs.
 
 ## External resources
 
-- The LinkedIn links on `/` point at Kalpna Tandon's public profile, and the
-  demo bar's last link opens `https://vibeworthy.co/` in a new tab. Both are
-  plain anchors — nothing is fetched from either host.
-- Creative pages link out to Instagram, TikTok, YouTube and portfolio hosts —
-  all plain anchors from the deck the client supplied.
+- **Fonts on `/`**: FreightTextCmp Pro, Poppins, Sweet Sans Pro and Neue Haas
+  Grotesk load from Adobe Fonts (use.typekit.net) via the kit URLs baked into
+  her page — licensed to her, not self-hostable. Inter and Pinyon Script load
+  from fonts.gstatic.com via the vendored `assets/rm/google-fonts.css`. With
+  those hosts unreachable the page falls back to system serif/sans and stays
+  legible.
+- The pitch pages (`/creatives/`, `/offer/`, 404) self-host Lora + Poppins
+  from `/fonts/`.
+- The demo bar's last link opens `https://vibeworthy.co/` in a new tab; the
+  LinkedIn and social links on the pitch pages are plain anchors. Nothing is
+  fetched or framed from vibeworthy.co by any page.
 - The booking form runs entirely client-side: `booking.js` assembles the brief
   into a `mailto:` for the visitor's own email app. Nothing is stored or
-  POSTed anywhere. Production upgrade path: a real form endpoint.
-- Nothing else leaves the origin: no iframes, no CDNs, no trackers.
+  POSTed anywhere.
