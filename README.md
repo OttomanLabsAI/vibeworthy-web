@@ -2,15 +2,16 @@
 
 Pitch deploy for **Vibe Worthy** (vibeworthy.co) — Kalpna Tandon's culture
 marketing agency, London. The front page is her own site, captured whole and
-served from this repo; the pitch's creatives and offer pages sit one tab away
-on the demo bar. Packaged as a Cloudflare Workers static-assets site.
+served from this repo; the pitch adds her creatives at the foot of that page
+and the offer one tab away. Packaged as a Cloudflare Workers static-assets
+site.
 
 | Route | Page |
 | --- | --- |
 | `/` | Her original site — the owner-supplied capture of vibeworthy.co, every asset vendored |
 | `/#people` | The talent roster, at the foot of the front page (`/creatives/` forwards here) |
 | `/creatives/<name>/` | Per-creative pitch page + booking enquiry (Naomi, Nee, Poonam) |
-| `/offer/` | The offer — tale of the tape, £500 / £50, terms |
+| `/offer/` | The offer — tale of the tape and what the new site already does better |
 
 ## Structure
 

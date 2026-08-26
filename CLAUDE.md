@@ -67,7 +67,7 @@ package.json       wrangler devDependency + dev/deploy scripts
   Do not change that look without being asked. On those pages the one-line
   explanation under each service card is our placeholder copy — not her
   wording.
-- The demo bar (tabs: The site · The people · The offer · Current site ↗) is
+- The demo bar (tabs: The site · The offer · Current site ↗) is
   chrome on every page except the 404; its last link goes out to her live
   site in a new tab. Keep it a plain anchor: nothing is fetched or framed
   from vibeworthy.co by any page.
@@ -78,10 +78,11 @@ package.json       wrangler devDependency + dev/deploy scripts
   from the client's own deck (VW_Deck_-_AK_2.pdf, 24 Aug 2026) and stay
   verbatim. The deck's Ama Louise link was broken (pointed at apple.com), so
   that credit is unlinked pending the real URL.
-- The offer page's numbers are the flyer's sheet (£500 / £50 / £1,500–£8,000 /
-  £0 until transfer). Never restate them differently here and on the flyer.
-  Its "Already in the demo" list claims only what the demo verifiably does;
-  keep it true when the front page changes.
+- **No prices on the offer page** (owner instruction, 26 Aug 2026): it sells
+  the improvements — the tale of the tape, the "Already in the demo" list and
+  ownership — and money is discussed off-page. The "Already in the demo" list
+  claims only what the demo verifiably does; keep it true when the front page
+  changes.
 - `og.png` is the social-sharing card, referenced from every page's `og:image`
   by absolute URL on the workers.dev deploy. On transfer to her domain,
   re-point those URLs; regenerate the card if the site's look changes.
@@ -154,3 +155,4 @@ design are their own release, requested deliberately.
 | v1.13 | A right size for every screen | On big monitors the page no longer inflates — it sits centred at its true size with the type held steady. And phones now get a page built for them: the same words, logos and colours restacked into one readable column instead of a shrunken desktop. |
 | v1.14 | The cards glide and the people move in | The process cards now slide across as you scroll, the way her original moves. Her three creatives now live at the foot of the front page itself — bookable in a tap — and the offer page carries a plain list of what the demo already does that the current site doesn't. |
 | v1.15 | The type finds its voice again | Her font service refuses to dress the demo's address, so every headline had been falling back to a plain default face. The whole page — headlines, tickers, cards and all — now wears the site's own elegant serif and clean sans, with each line held to the width it was drawn for. |
+| v1.16 | The offer speaks only of the work | The demo bar slims to two tabs — the site and the offer — now that the people live on the front page itself. And the offer page no longer quotes a price: it makes the case on the work alone, with money left for the conversation. |
